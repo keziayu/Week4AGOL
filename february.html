@@ -1,0 +1,60 @@
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+      <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
+  
+      <style>
+        html,
+        body {
+          height: 100%;
+          background-color: whitesmoke;
+        }
+
+        h1 {
+          text-align: center;
+          color: hotpink;
+          padding: 20px;
+          margin: 10px;
+        }
+
+        h2 {
+          text-align: center;
+          padding:5px;
+          color: indianred;
+        }
+
+        #viewDiv {
+          padding: 0;
+          margin: auto;
+          height: 70%;
+          width: 70%;
+        }
+      </style>
+        <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
+        <script src="https://js.arcgis.com/4.18/"></script>
+        <script>
+            require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+      
+            esriConfig.apiKey = "AAPK81ce638b5eaf457989c9bfaa17654c31MbOxO2iejhdhvns2d1JYrfojJ-TYPJYJwBea_RR9HnJBRDgGMPss_5CIsFJUp90Q";
+
+            const map = new Map({
+                basemap: "arcgis-colored-pencil" // Basemap layer service
+            });
+            const view = new MapView({
+                map: map,
+                center: [-79.7954, 43.7410], // Longitude, latitude
+                zoom: 14, // Zoom level
+                container: "viewDiv" // Div element
+        });
+
+         });
+        </script>
+  
+    </head>
+    <body>
+      <h1>WILL YOU BE MY VALENTINE</h1>
+      <h2>Brampton Edition</h2>
+      <div id="viewDiv"></div>
+    </body>
+  </html>
