@@ -6,9 +6,20 @@
   
       <style>
         html,
-        body {
-          height: 100%;
-          background-color: whitesmoke;
+        body,
+        
+        #card {
+          position: fixed;
+                top:50%;
+                left:50%;
+                transform: translate(-50%, -50%);
+                border: 5px solid pink;
+                border-radius: 2px;
+                padding: 10px;
+                margin: 10px;
+                background-color: lavenderblush;
+                height: 100%;
+                width: 700px;
         }
 
         h1 {
@@ -24,11 +35,20 @@
           color: indianred;
         }
 
+        h4 {
+          color: hotpink;
+        }
+
+        p {
+          text-align: center;
+          color: indianred;
+        }
+
         #viewDiv {
           padding: 0;
           margin: auto;
-          height: 70%;
-          width: 70%;
+          height: 450px;
+          width: 600px;
         }
       </style>
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
@@ -53,8 +73,12 @@
   
     </head>
     <body>
-      <h1>WILL YOU BE MY VALENTINE</h1>
-      <h2>Brampton Edition</h2>
-      <div id="viewDiv"></div>
+      <div id=card>
+          <h4>to: </h4>
+          <h4>from:</h4>
+          <h1>WILL YOU BE MY VALENTINE</h1>
+          <p>"Do you have a map, because I just got lost in your eyes..."</p>
+          <div id="viewDiv"></div>
+      </div>
     </body>
   </html>
