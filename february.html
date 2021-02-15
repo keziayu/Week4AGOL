@@ -59,7 +59,7 @@
         <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
         <script src="https://js.arcgis.com/4.18/"></script>
         <script>
-            require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+            require(["esri/config","esri/Map", "esri/views/MapView","esri/widgets/Search"], function (esriConfig,Map, MapView, Search) {
       
             esriConfig.apiKey = "AAPK81ce638b5eaf457989c9bfaa17654c31MbOxO2iejhdhvns2d1JYrfojJ-TYPJYJwBea_RR9HnJBRDgGMPss_5CIsFJUp90Q";
 
@@ -71,7 +71,12 @@
                 center: [-79.7954, 43.7410], // Longitude, latitude
                 zoom: 14, // Zoom level
                 container: "viewDiv" // Div element
-        });
+            });
+            const search = new Search({ //Add Search widget
+              view: view
+            });
+
+            view.ui.add(search, "top-right"); // Add to the map
 
          });
         </script>
