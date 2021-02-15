@@ -63,8 +63,10 @@
               "esri/config",
               "esri/Map", 
               "esri/views/MapView",
-              "esri/widgets/Search"
-            ], function (esriConfig,Map, MapView, Search) {
+              "esri/widgets/Search",
+              "esri/Graphic",
+              "esri/layers/GraphicsLayer"
+            ], function (esriConfig,Map, MapView, Search, Graphic, GraphicsLayer) {
       
             esriConfig.apiKey = "AAPK81ce638b5eaf457989c9bfaa17654c31MbOxO2iejhdhvns2d1JYrfojJ-TYPJYJwBea_RR9HnJBRDgGMPss_5CIsFJUp90Q";
 
@@ -77,10 +79,31 @@
                 zoom: 14, // Zoom level
                 container: "viewDiv" // Div element
             });
+
+            const graphicsLayer = new GraphicsLayer();
+            map.add(graphicsLayer);
+            const point = { //Create a point
+              type: "point",
+              longitude: -79.7954,
+              latitude: 43.7410
+            };
+            const simpleMarkerSymbol = {
+              type: "simple-marker",
+              color: [126,25,27],
+              outline: {
+                color: [255,255,255],
+                width: 1
+              }
+            };
+            const pointGraphic = new Graphic({
+              geometry: point,
+              symbol: simpleMarkerSymbol
+            });
+            graphicsLayer.add(pointGraphic);
+
             const search = new Search({ //Add Search widget
               view: view
             });
-
             view.ui.add(search, "top-right"); // Add to the map
 
          });
