@@ -1,7 +1,11 @@
-# Week4AGOL
-## ArcGIS Online Developers: create a new empty layer
-### Feature layer name: Tree Database, Ontario
-### Feature layer id:
-e016146192074dbfae190d566f636f6c
-### REST Endpoint url:
-https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/TreeDatabase2/FeatureServer
+#AGOL
+### GeoJSON Dinosaur WebMap:
+https://fleming.maps.arcgis.com/home/item.html?id=3347399f3fae4d949c528efc95f0577f
+
+### ArcGIS Online Developers: Hosted Feature Layer
+## Feature layer name: Tree Database
+## Feature layer id:
+9c03096e663a43a4aaebd9c4a2063c62
+>https://fleming.maps.arcgis.com/home/item.html?id=9c03096e663a43a4aaebd9c4a2063c62
+## REST Endpoint url:
+https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/treedatabase1/FeatureServer
