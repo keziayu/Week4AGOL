@@ -85,12 +85,13 @@
             // POINT FEATURE
             const graphicsLayer = new GraphicsLayer();
             map.add(graphicsLayer);
+
             const point = { //Create a point
               type: "point",
               longitude: -79.7954,
               latitude: 43.7410
             };
-            const simpleMarkerSymbol = {
+            const simpleMarkerSymbol = { // Symbolize point
               type: "simple-marker",
               color: [126,25,27],
               outline: {
@@ -98,14 +99,24 @@
                 width: 1
               }
             };
+            const popupTemplateX = { //Add popup for point feature on click. Defines pop-up with empty attributes.
+              title: "{Name}",
+              content: "{Description}"
+            }
+            const info = { //attributes to fill the empty popup template
+              Name: "Hint!",
+              Description: "Final Destination: Heart Lake <3 <br> P.S. We need a boat"
+            }
             const pointGraphic = new Graphic({
               geometry: point,
-              symbol: simpleMarkerSymbol
+              symbol: simpleMarkerSymbol,
+              attributes: info,
+              popupTemplate: popupTemplateX
             });
-            graphicsLayer.add(pointGraphic);
+            graphicsLayer.add(pointGraphic); // add created point to graphics layer
 
             // HEART POLYGON
-            const polygon = {
+            const polygon = { //Create polygon
               type: "polygon",
               rings: [
               [
@@ -177,7 +188,7 @@
             ]
             };
 
-            const simpleFillSymbol = {
+            const simpleFillSymbol = { //Symbolize polygon
               type: "simple-fill",
               color: [254,127,156, 0.25], //Watermelon pink, 0.25 opacity
               outline: {
@@ -186,11 +197,11 @@
               }
             };
 
-            const polygonGraphic = new Graphic({
+            const polygonGraphic = new Graphic({ 
               geometry: polygon,
               symbol: simpleFillSymbol,
             });
-            graphicsLayer.add(polygonGraphic);
+            graphicsLayer.add(polygonGraphic); //Adds polygon to graphics layer
 
             // SEARCH BAR
             const search = new Search({ //Add Search widget
